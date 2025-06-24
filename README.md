@@ -44,14 +44,6 @@ You can define `${MY_LIBS}` to point to this repo folder and use it in projects 
 
 ---
 
-## 🔄 Keeping SparkFun Libraries Updated
-
-If you're using the SparkFun libraries as a Git submodule or fork, you can update them using:
-
-```bash
-git pull
-
-Or manually fetch the latest version from https://github.com/sparkfun/SparkFun-KiCad-Libraries
 
 🤝 Contributing
 If you'd like to contribute:
