@@ -1,68 +1,82 @@
-# 🧰 KiCad Custom Libraries ![KiCad](https://img.shields.io/badge/Made%20with-KiCad-blue?logo=kicad) ![License](https://img.shields.io/badge/license-MIT-green)
+# 🧰 KiCad Custom Libraries
 
-This repository contains a collection of **custom and third-party KiCad libraries** organized for easy reuse in PCB design projects. It includes **symbols**, **footprints**, and **3D models**, including curated content from SparkFun and other sources.
+This repository contains a collection of custom and third-party KiCad libraries organized for easy reuse in PCB design projects. It includes **symbols**, **footprints**, and **3D models**, including curated content from SparkFun and other sources.
 
 ---
 
 ## 📁 Folder Structure
+
 kicad-libraries/
-├── Symbols/ # KiCad symbol libraries (.kicad_sym)
-├── Footprints/ # KiCad footprint libraries (.pretty)
-├── 3DModels/ # STEP/WRL files for 3D model rendering
-└── README.md # Project documentation
+├── symbols/ # KiCad symbol libraries (.kicad_sym)
+├── footprints/ # KiCad footprint libraries (.pretty)
+├── 3dmodels/ # STEP/WRL files for 3D model rendering
+└── README.md # This documentation file
+
 
 ---
 
 ## 📦 Included Libraries
 
-| Library File                          | Type       | Source   | Description                                   |
-|---------------------------------------|------------|----------|-----------------------------------------------|
-| ABX00027.kicad_sym                    | Symbol     | Custom   | Symbol for Arduino Nano 33 IoT                |
-| MODULE_ABX00027.kicad_mod             | Footprint  | Custom   | Footprint matching Nano 33 IoT module         |
-| ABX00027.step                         | 3D Model   | Custom   | High-detail STEP model for Nano 33 IoT board  |
-| *(More coming soon...)*              | -          | -        | -                                             |
+| Library Name               | Type        | Source       | Notes                          |
+|----------------------------|-------------|--------------|--------------------------------|
+| `my_symbols.kicad_sym`     | Symbols     | Custom       | Personal symbols for ICs, headers, etc. |
+| `my_footprints.pretty/`    | Footprints  | Custom       | Common SMD, THT footprints     |
+| `SparkFun-Footprints.pretty/` | Footprints  | SparkFun     | Imported from SparkFun repo    |
+| `SparkFun-Symbols.kicad_sym` | Symbols     | SparkFun     | Popular sensors, connectors    |
+| `3dmodels/`                | 3D Models   | Mixed        | Custom and vendor STEP files   |
 
 ---
 
-## 🧪 How to Use These Libraries
+## 🛠 How to Use in KiCad
 
-1. **Clone this repo** or click **Code → Download ZIP**  
-2. Open **KiCad** and go to:
-   - `Preferences > Manage Symbol Libraries`
-   - `Preferences > Manage Footprint Libraries`
-3. **Add the symbol and footprint libraries** from their respective folders
-4. **Assign 3D models** in the footprint properties (use relative paths if possible)
+### 🔗 Add Symbol Libraries
+1. Open KiCad > Preferences > Manage Symbol Libraries
+2. Click **Add existing library to table**
+3. Browse to `symbols/` folder and add `.kicad_sym` files
 
----
+### 🔗 Add Footprint Libraries
+1. Go to Preferences > Manage Footprint Libraries
+2. Click **Add existing library to table**
+3. Select `.pretty` folder inside `footprints/`
 
-## 📷 Library Usage Preview in KiCad
-
-> _Below is an example screenshot showing the Arduino Nano 33 IoT symbol and footprint used in a schematic and PCB layout._
-
-![KiCad Preview](docs/nano33iot-example.png)
-
-*(Replace with your actual image file)*
+### 🌐 Optional: Add Environment Variables
+You can define `${MY_LIBS}` to point to this repo folder and use it in projects for portability.
 
 ---
 
-## 🤝 Contributing
+## 🔄 Keeping SparkFun Libraries Updated
 
+If you're using the SparkFun libraries as a Git submodule or fork, you can update them using:
+
+```bash
+git pull
+
+Or manually fetch the latest version from https://github.com/sparkfun/SparkFun-KiCad-Libraries
+
+🤝 Contributing
 If you'd like to contribute:
-- Follow KiCad naming conventions
-- Use `.pretty` folders for footprints
-- Use `.kicad_sym` for symbols
-- Submit a pull request with a description
+
+Keep footprints in .pretty/ format
+
+Use proper naming conventions
+
+Submit a pull request with a clear description
+
+📜 License
+Unless otherwise stated, custom libraries in this repository are shared under the MIT License. Third-party libraries (e.g., SparkFun) retain their original licenses.
+
+🙌 Credits
+Custom libraries by Hussien
+
+SparkFun libraries by SparkFun Electronics
+
 
 ---
 
-## 📜 License
-
-All custom libraries in this repository are shared under the **MIT License**.  
-Third-party libraries retain their original licenses (e.g., SparkFun content).
-
----
-
-## 🙌 Credits
-
-- Maintained by [Hussien](https://github.com/hussienzy)
-- Based on components and footprints built in-house or curated from trusted sources
+### 💡 To Use It:
+1. Save the content as `README.md` in your root `kicad-libraries/` folder.
+2. Push it to GitHub:
+```bash
+git add README.md
+git commit -m "Added README documentation"
+git push
