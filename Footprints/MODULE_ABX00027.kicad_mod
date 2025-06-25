@@ -1,5 +1,5 @@
 
-(footprint MODULE_ABX00027 (layer F.Cu) (tedit 68599737)
+(footprint MODULE_ABX00027 (layer F.Cu) (tedit 6859221B)
   (descr "")
   (attr smd)
   (fp_text reference REF** (at -18.825 -11.525 0) (layer F.SilkS)
